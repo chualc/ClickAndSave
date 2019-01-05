@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click and send to python immediately</title>
+</head>
+<body>
+
+<form action="/" method="post">
+
+<table border="1">
+    <tr>
+        <td>Select speed</td>
+            <td>
+          <input type="radio" name="speed" value="high" {{defaultHigh}} onclick="this.form.submit();"> <br>
+          <input type="radio" name="speed" value="medium" {{defaultMedium}} onclick="this.form.submit();"> <br>
+          <input type="radio" name="speed" value="low" {{defaultLow}} onclick="this.form.submit();"> <br>
+        </td>
+
+        <td>Temperature</td>
+        <td>
+            <input type="submit" value="UP" name="temperature"></br>
+            <input type="submit" value="DOWN" name="temperature">
+            
+        </td>
+    </tr>
+
+    <tr>
+        <td>Value selected</td>
+        <td>
+            {% if speed %}
+                {{ speed }}
+             {% else %}
+                None
+            {% endif %}
+        </td>
+
+        <td>Temperature</td>
+        <td>
+            {% if temperature %}
+                {{ temperature }}
+             {% else %}
+                None
+            {% endif %}
+        </td>
+
+    </tr>
+</table>
+
+</form>
+
+</body>
+</html>
